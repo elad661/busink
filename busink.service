@@ -1,0 +1,14 @@
+[Unit]
+Description=busink service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/pi/busink/main.py
+WorkingDirectory=/home/pi/busink
+Restart=on-failure
+RestartSec=30
+Environment=LC_ALL=en_US.UTF-8
+
+[Install]
+WantedBy=multi-user.target
